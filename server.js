@@ -33,7 +33,8 @@ var convDAO  = require('./dao/convDAO').convDAO;
 // == MONGODB DATOS DE CONEXIÓN
 // ====================================================== //
 var mdbconf = {
-  host: process.env.MONGODB_PORT_27017_TCP_ADDR || 'localhost',
+  // host: process.env.MONGODB_PORT_27017_TCP_ADDR || 'localhost',
+  host: '67.205.130.68' || 'localhost',
   port: '27017',
   db: 'chatSS'
 };
@@ -41,9 +42,9 @@ var mdbconf = {
 // ====================================================== // == INICIALIZA LA CONEXIÓN A MONGODB Y EL SERVIDOR
 // =====================================================  //
 var mongodbURL = 'mongodb://' + mdbconf.host + ':' + mdbconf.port + '/' + mdbconf.db;
-if (process.env.OPENSHIFT_MONGODB_DB_URL) {
-  mongodbURL = process.env.OPENSHIFT_MONGODB_DB_URL
-}
+// if (process.env.OPENSHIFT_MONGODB_DB_URL) {
+//   mongodbURL = process.env.OPENSHIFT_MONGODB_DB_URL
+// }
 MongoClient.connect(mongodbURL, function (err, db) {
   
   var usersDAO = new userDAO(db);
@@ -226,7 +227,7 @@ app.set('view engine', 'html');
   // ====================================================== //
   // == APP STARTUP
   // ====================================================== //
-  if (process.env.OPENSHIFT_NODEJS_IP && process.env.OPENSHIFT_NODEJS_PORT) {
+/*  if (process.env.OPENSHIFT_NODEJS_IP && process.env.OPENSHIFT_NODEJS_PORT) {
     http.listen(process.env.OPENSHIFT_NODEJS_PORT, process.env.OPENSHIFT_NODEJS_IP, function() {
       console.log('Listening at openshift on port: ' + process.env.OPENSHIFT_NODEJS_PORT);
     });
@@ -235,6 +236,10 @@ app.set('view engine', 'html');
     http.listen(2000, function () {
       console.log('Listing on port: 2000')
     })
-  }
+  }*/
+
+    http.listen(3000, function () {
+      console.log('Listing on port: 3000');
+    });
 
 });
