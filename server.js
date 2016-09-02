@@ -36,7 +36,7 @@ var mdbconf = {
   // host: process.env.MONGODB_PORT_27017_TCP_ADDR || 'localhost',
   host: 'localhost',
   port: '27017',
-  db: 'chatSS'
+  db: 'chatSS1'
 };
 
 // ====================================================== // == INICIALIZA LA CONEXIÓN A MONGODB Y EL SERVIDOR
@@ -238,8 +238,8 @@ app.set('view engine', 'html');
     })
   }*/
 
-    http.listen(2000, function () {
-      console.log('Listing on port: 2000');
+    http.listen(2020, function () {
+      console.log('Listing on port: 2020');
     });
 
 });
