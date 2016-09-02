@@ -34,7 +34,7 @@ var convDAO  = require('./dao/convDAO').convDAO;
 // ====================================================== //
 var mdbconf = {
   // host: process.env.MONGODB_PORT_27017_TCP_ADDR || 'localhost',
-  host: '67.205.130.68' || 'localhost',
+  host: 'localhost',
   port: '27017',
   db: 'chatSS'
 };
