@@ -10,7 +10,7 @@
 
 
 // ====================================================== //
-// == MODULOS REQUERIDOS PARA LA APLICACIÓN
+// == MODULOS REQUERIDOS PARA LA APLICACIÃ“N
 // ====================================================== //
 var express     = require('express');
 var app         = express();
@@ -22,7 +22,7 @@ var NanoTimer   = require('nanotimer');
 var timer = new NanoTimer();
 
 // ====================================================== //
-// == MODULOS PROPIOS DE LA APLICACIÓN
+// == MODULOS PROPIOS DE LA APLICACIÃ“N
 // Ahora con minuscula
 // ====================================================== //
 var userDAO     = require('./dao/userDAO').userDAO;
@@ -30,7 +30,7 @@ var messageDAO  = require('./dao/messageDAO').messageDAO;
 var convDAO  = require('./dao/convDAO').convDAO;
 
 // ====================================================== //
-// == MONGODB DATOS DE CONEXIÓN
+// == MONGODB DATOS DE CONEXIÃ“N
 // ====================================================== //
 var mdbconf = {
   // host: process.env.MONGODB_PORT_27017_TCP_ADDR || 'localhost',
@@ -39,7 +39,7 @@ var mdbconf = {
   db: 'chatSS1'
 };
 
-// ====================================================== // == INICIALIZA LA CONEXIÓN A MONGODB Y EL SERVIDOR
+// ====================================================== // == INICIALIZA LA CONEXIÃ“N A MONGODB Y EL SERVIDOR
 // =====================================================  //
 var mongodbURL = 'mongodb://' + mdbconf.host + ':' + mdbconf.port + '/' + mdbconf.db;
 // if (process.env.OPENSHIFT_MONGODB_DB_URL) {
@@ -62,7 +62,7 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 // ====================================================== //
-// == CONFIGURACIÓN DE RUTAS
+// == CONFIGURACIÃ“N DE RUTAS
 // =====================================================  //
   // app.get('/signup', function (req, res) {
   //   res.render('signup', {nombre: req.body.nombre});
@@ -166,7 +166,7 @@ app.set('view engine', 'html');
      * cada vez que un usuario envia un mensaje.
      * 
      * @param  msg : Los datos enviados desde el cliente a 
-     *               través del socket.
+     *               travÃ©s del socket.
      */
     socket.on('chat message', function(msg) {
       messagesDAO.addMessage(msg.username, msg.date, msg.message, function (err, nmsg) {
@@ -238,8 +238,8 @@ app.set('view engine', 'html');
     })
   }*/
 
-    http.listen(2020, function () {
-      console.log('Listing on port: 2020');
+    http.listen(2000, function () {
+      console.log('Listing on port: 2000');
     });
 
 });
