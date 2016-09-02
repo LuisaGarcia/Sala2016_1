@@ -1,0 +1,4 @@
+en este se limita a un tipo de conversación y permite varias conexiones pero si se sale el que la comienza se cae el socket
+
+chat2.html incluye las versiones para ciberbullying
+
